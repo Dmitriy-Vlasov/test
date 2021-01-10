@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./app.js" async></script>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Telegram-bot list</h1>
+    <span class="addNewBotBtn">Add New Bot</span>
+    <ul class="botList"></ul>
+
+    <div class="closeModalField  hide">
+        <div class="modal">
+            <span class="closeModal">&#10006;</span>
+            <form class="botForm">
+                <input type="text" id="id">
+                <input type="text" placeholder="Titile" id="title">
+                <textarea placeholder="Description" id="description"></textarea>
+                <input type="file" id="file">
+                <input type="date" id="date">
+                <button class="saveBtn">Save</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
