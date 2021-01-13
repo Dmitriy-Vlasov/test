@@ -27,8 +27,6 @@ let botList = [
     { id: Math.random(), title: 'Dnipro News', description: 'Новости из Нью-Йорка про белых и черных!', date: '', file: '' },
 ];
 
-let targetBotId;
-
 init();
 
 // Функция инициализации
@@ -59,7 +57,6 @@ function onCloseModalClick() {
 }
 
 function onBotListClick(e) {
-    console.log(e.target)
     if (e.target.classList.contains('deleteBot')) {
         deleteBot(e.target);
     } else if (e.target.classList.contains('botListItem')) {
@@ -116,8 +113,6 @@ function setModal(el) {
     descriptionField.value = targetBot.description;
     dateField.value = targetBot.date;
     idField.value = targetBot.id;
-
-    targetBotId = editedBotID;
 }
 
 function createNewBot() {
@@ -140,13 +135,13 @@ function createNewBot() {
 }
 
 function changeBot() {
-    const changedDataItem = botList.find(el => el.id == targetBotId);
+    const changedDataItem = botList.find(el => el.id == idField.value);
 
     changedDataItem.title = titleField.value;
     changedDataItem.description = descriptionField.value;
     changedDataItem.date = dateField.value;
 
-    const changedBot = botListElem.querySelector(`li[data-id="${targetBotId}"]`);
+    const changedBot = botListElem.querySelector(`li[data-id="${idField.value}"]`);
     changedBot.innerHTML =
         `${changedDataItem.title}
         <span class="descriptionBot">${changedDataItem.description}</span>
